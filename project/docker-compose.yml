@@ -1,0 +1,14 @@
+version: '3'
+services:
+  pyenv:
+    build:
+      context: ./project
+      shm_size: "2gb"
+    command:
+      "sleep infinity"
+    environment:
+      - TZ=Asia/Tokyo
+      - CONFIG_FILENAME=config.json
+    volumes:
+      - ./project:/project
+    network_mode: "host"
